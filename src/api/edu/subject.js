@@ -13,7 +13,7 @@ export function reqGetSubjectList(page,limit){
         method:"GET"
     })
 }
-//获取一级分类列表
+//获取二级分类列表
 export function reqGetSubSubjectList(parentId){
     return request({
         url:`${BASE_URL}/get/${parentId}`,
@@ -50,5 +50,13 @@ export function reqDelSubject(id){
     return request({
         url:`${BASE_URL}/remove/${id}`,
         method:"DELETE",
+    })
+}
+
+//获取所有一级课程分类
+export function reqGetAllSubjectList(id){
+    return request({
+        url:`${BASE_URL}`,
+        method:"GET",
     })
 }

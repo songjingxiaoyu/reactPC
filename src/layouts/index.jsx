@@ -10,10 +10,9 @@ import { Authorized } from "../components/Authorized";
 class BasicLayout extends Component {
   render() {
     const { token } = this.props;
-
+    //有token是已登录
+    //判断有token加载PrimaryLayout
     if (token) {
-      // render props技术
-      // 提供一个B组件渲染到A组件内部，并传入props
       return (
         <Authorized
           render={(routes) => {
@@ -22,7 +21,7 @@ class BasicLayout extends Component {
         />
       );
     }
-
+    //判断没有token加载PublicLayout
     return <PublicLayout />;
   }
 }
